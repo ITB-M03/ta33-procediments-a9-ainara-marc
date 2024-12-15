@@ -1,9 +1,7 @@
 package org.example.controllers
 
-import controllers.menuCanvio
-import controllers.menuComplet
-import controllers.mostrarResultat
-import java.util.Scanner
+import controllers.*
+
 
 enum class BILLETE(val nombre: String, val precio: Double){
     SENCILLO(nombre = "Billet Senzill", precio = 2.40),
@@ -18,9 +16,9 @@ enum class ZONAS(val nombre: String, val multiplicador: Double){
     ZONA3(nombre = "Zona 3", multiplicador = 1.8443)
 }
 fun main() {
-    val scanner = Scanner(System.`in`)
+    val scanner = abrirScanner()
     val historial = menuComplet(scanner)
     menuCanvio(historial, scanner)
     mostrarResultat(historial)
-
+    cerrarScanner(scanner)
 }
